@@ -7,6 +7,18 @@ body{
   text-align: center;
 }
 
+/*hack to make the "nav" button jump to the correct position*/
+#mission,
+#feature,
+#location
+{
+  position: relative;
+  margin-top:-71px;
+  padding-top:71px;
+  background-color: transparent;
+}
+
+
 /************************************ header **************************************************/
 header{
   height: 69px;
@@ -18,11 +30,9 @@ header{
   position: fixed;
   width: 100%;
   z-index: 20;
-  /*QUESTION: why do i need these two:*/
+  /*since there is no reset.css, i have to put these:*/
   top: 0px;
   left: 0px;
-  /*QUESTION: without top and left set to 0 the header has a margin to the left and to top.. why?
-  and why is there no margin to the right? or is this due to my ubuntu distribution?*/
 }
 
 .logo{
@@ -31,7 +41,6 @@ header{
   margin-left: 10px;
 }
 
-/* QUESTION: is it wise not to make extra classes but use the html elements as selectors? */
 header nav{
   display: inline-flex;
   margin-right: 10px;
@@ -53,8 +62,6 @@ header a{
 /************************************ main **************************************************/
 
 .main_content{
-  /* QUESTION: also here i have the same problem: with top the height of the header, there is a small padding between the image and the header, why? */
-  /*top: 69px; -> makes a small gap*/
   top: 63px;
   position: relative;
   display: flex;
@@ -68,10 +75,6 @@ header a{
   padding: 10px;
   margin: 0px;
 }
-
-/* QUESTION: i prefer to use selectors/rules for each part, i.e. mission, tea, location. is that a good practise?
-would it be better to have less rules? more generel rules?
-in my opinion, my way is easier to understand and modify. but i might be wrong.... */
 
 /************************************ mission **************************************************/
 
@@ -138,8 +141,7 @@ in my opinion, my way is easier to understand and modify. but i might be wrong..
 
 h2.location_title{
   display: inline-flex;
-  /* QUESTION: this is probably not good. using flex-start and margin here. but in order to get this the way it looks in the spec, i "had" to do it this way... */
-  margin: 60px 0px 15px 0px;
+  margin: 40px 0px 40px 0px;
 }
 
 .subcontainer_locations{
